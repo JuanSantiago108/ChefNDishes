@@ -1,0 +1,25 @@
+@model List<Dish>
+
+
+<a asp-controller="Dish" asp-action="NewDish" >Add a Dish</a>
+
+<h3>Check out out roster of Dishes</h3>
+        <table class="table">
+            <tr>
+        <th>Name</th>
+        <th>Chef</th>
+        <th>Tastiness</th>
+        <th>Calories</th>
+@foreach (Dish dish in Model)
+{
+
+        <tr>
+            <td>@dish.Name  </td>
+            <td>@dish.Creator.FirstName</td>
+            <td>@dish.Tastiness</td>
+            <td>@dish.Calories</td>
+        </tr>
+
+}
+            </tr>
+        </table>
